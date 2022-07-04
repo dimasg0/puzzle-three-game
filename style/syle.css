@@ -15,8 +15,47 @@ body {
 .welcome {
   text-align: center;
   padding: 20px;
+  margin-bottom: 10px;
 }
 
+.info {
+  margin: 10px 25px 50px 25px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+#level-change {
+  font-size: 16px;
+  font-weight: 800;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 0 0 10px 25px;
+  width: 400px;
+}
+
+.level-choose {
+  background-color: #eabeaf;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 800;
+  border-radius: 5px;
+  border: 1px solid gray;
+  float: right;
+  margin: 0 25px 10px 0;
+}
+
+#start {
+  position: relative;
+
+  background-color: #C19789;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 800;
+  border-radius: 30px;
+  width: 92%;
+  margin-bottom: 0px;
+  margin: 150px 25px 0 25px;
+}
 
 /*Cторінка гри*/
 .container {

@@ -11,7 +11,7 @@
     <html>
     <div class="container">
         <h2 class="welcome">Вас вітає гра Puzzle Game</h2>
-
+        <p class="info"> Відповідайте правильно на питання та отримуйте бали, більше правильних відповідей - більше балів</p>
         <div class="change-level">
             <select name="level-change" id="level-change">
                 <option value="simple">Простий</option>
@@ -19,25 +19,11 @@
                 <option value="hard">Важкий</option>
             </select>
 
-            <button>Обрати рівень</button>
+            <button class="level-choose">Обрати рівень</button>
         </div>
 
         <div class="start">
-            <button id="choose" class="choose"><a href="/html/game.html">Почати гру</a></button>
-            <style>
-                .choose {
-                    position: relative;
-
-                    background-color: #C19789;
-                    padding: 10px;
-                    font-size: 16px;
-                    font-weight: 800;
-                    border-radius: 30px;
-                    width: 150px;
-                    margin-bottom: 0px;
-                    margin: 0 0 0 40%;
-                }
-            </style>
+            <button id="start" class="start">Почати гру</button>
         </div>
     </div>
 
