@@ -30,7 +30,7 @@ body {
   font-weight: 800;
   padding: 10px;
   border-radius: 5px;
-  margin: 0 0 10px 25px;
+  margin: 0 0 10px 10px;
   width: 400px;
 }
 
@@ -41,8 +41,8 @@ body {
   font-weight: 800;
   border-radius: 5px;
   border: 1px solid gray;
-  float: right;
-  margin: 0 25px 10px 0;
+  float: left;
+  margin: 0 0 10px 25px;
 }
 
 #start {
@@ -120,4 +120,14 @@ body {
 #error {
   color: rgb(212, 2, 2);
   margin-bottom: 25px;
+}
+
+#back {
+  background-color: #C19789;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 800;
+  border-radius: 5px;
+  width: 150px;
+  margin-bottom: 20px;
 }
