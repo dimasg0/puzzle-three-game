@@ -1,5 +1,8 @@
 const puzzleSimple = '{"puzzle": [{"text": "Дивний дощ часом йде: сотнею струменів він догори б`є", "answer": "Водограй" }, {"text": "Чим більше з неї береш, тим більше вона стає", "answer": "Яма" }, {"text": "Хто може підняти і пересунути коня та слона?", "answer": "Шахіст"}, {"text": "Вдень вікно розбивається, а вночі само вставляється", "answer": "Ополонка"}, {"text": "Є на світі кінь — всьому світу не вдержати", "answer": "Вітер"}, {"text": "Зубів не має, а кусається ", "answer": "Кропива"}]}';
-const obj = JSON.parse(puzzleSimple);
+const puzzleMidle = '{"puzzle": [{"text": "My test", "answer": "test"}]}';
+const puzzleHurd = '{"puzzle": [{"text": "My test hurd", "answer": "test"}]}';
+
+let obj 
 
 let level = document.getElementById("level");
 let error = document.getElementById("error");
@@ -32,14 +35,20 @@ let counter = 0;
 if(chooseLevel === "simple") {
     level.innerHTML = "Рівень: Звичайний";
     counter = 5;
+    
+    obj = JSON.parse(puzzleSimple);
 } 
 else if (chooseLevel === "middle"){
     level.innerHTML = "Рівень: Середній"
     counter = 3;
+
+    obj = JSON.parse(puzzleMidle);
 } 
 else if (chooseLevel === "hard") {
     level.innerHTML = "Рівень: Важкий"
     counter = 1;
+
+    obj = JSON.parse(puzzleHurd);
 }
 
 count.innerHTML = "Залишилося спроб: " + counter;
@@ -77,7 +86,7 @@ check.addEventListener("click", function () {
   } else {
     if (counter == 0) {
       scoreCount = 0;
-      alert("Гра завершина");
+      alert("Гра завершена");
     } else {
       counter--;
       count.innerHTML = "Залишилося спроб: " + counter;
