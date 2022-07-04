@@ -5,15 +5,19 @@ let level = document.getElementById("level");
 let error = document.getElementById("error");
 let qs = document.getElementById("qs");
 let check = document.getElementById("chech");
+
+//ответ
 let answer = document.getElementById("textQs");
+
+//количество попыток
 let count = document.getElementById("count");
 
+//перезагрузка игры
 let reload = document.getElementById("reload");
 
 let scoreCount = 0;
 let score = document.getElementById("score")
 score.innerHTML = "Рахунок: " + scoreCount;
-
 
 error.hidden = true;
 reload.hidden = true;
