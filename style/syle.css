@@ -11,7 +11,6 @@ body {
   height: 500px;
 }
 
-
 /*Головна сторынка*/
 .welcome {
   text-align: center;
@@ -107,6 +106,17 @@ body {
   margin-bottom: 20px;
 }
 
+#reload {
+  background-color: #C19789;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 800;
+  border-radius: 5px;
+  width: 150px;
+  margin-bottom: 20px;
+}
+
 #error {
   color: rgb(212, 2, 2);
+  margin-bottom: 25px;
 }
