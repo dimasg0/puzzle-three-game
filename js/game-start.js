@@ -1,5 +1,4 @@
-const puzzleSimple =
-  '{"puzzle": [{"text": "Дивний дощ часом йде: сотнею струменів він догори б`є", "answer": "Водограй" }, {"text": "Чим більше з неї береш, тим більше вона стає", "answer": "Яма" }, {"text": "Хто може підняти і пересунути коня та слона?", "answer": "Шахіст"}, {"text": "Вдень вікно розбивається, а вночі само вставляється", "answer": "Ополонка"}, {"text": "Є на світі кінь — всьому світу не вдержати", "answer": "Вітер"}, {"text": " Зубів не має, а кусається ", "answer": " Кропива"}]}';
+const puzzleSimple = '{"puzzle": [{"text": "Дивний дощ часом йде: сотнею струменів він догори б`є", "answer": "Водограй" }, {"text": "Чим більше з неї береш, тим більше вона стає", "answer": "Яма" }, {"text": "Хто може підняти і пересунути коня та слона?", "answer": "Шахіст"}, {"text": "Вдень вікно розбивається, а вночі само вставляється", "answer": "Ополонка"}, {"text": "Є на світі кінь — всьому світу не вдержати", "answer": "Вітер"}, {"text": "Зубів не має, а кусається ", "answer": "Кропива"}]}';
 const obj = JSON.parse(puzzleSimple);
 
 let level = document.getElementById("level");
@@ -10,6 +9,11 @@ let answer = document.getElementById("textQs");
 let count = document.getElementById("count");
 
 let reload = document.getElementById("reload");
+
+let scoreCount = 0;
+let score = document.getElementById("score")
+score.innerHTML = "Рахунок: " + scoreCount;
+
 
 error.hidden = true;
 reload.hidden = true;
@@ -34,14 +38,21 @@ check.addEventListener("click", function () {
     obj.puzzle[number - 1].answer.toLocaleLowerCase()
   ) {
     error.hidden = false;
-    error.innerHTML = "Оновлення через 3 секунди";
+    error.innerHTML = "Так, все вірно";
+
+    scoreCount++
+    score.innerHTML = "Рахунок: " + scoreCount;
 
     setTimeout(() => {
-      location.reload();
-    }, 3000);
+        number = Math.ceil(Math.random() * length);
+        qs.innerHTML = "Питання: " + obj.puzzle[number - 1].text;
+        error.hidden = true;
+
+    }, 2000);
 
   } else {
     if (counter == 0) {
+        scoreCount = 0;
       alert("Гра завершина");
     } else {
       counter--;
@@ -49,10 +60,11 @@ check.addEventListener("click", function () {
 
       if (counter == 0) {
         error.hidden = false;
-        error.innerHTML = "Гра завершина";
+        error.innerHTML = "Гра завершена, ваш рахунок: " + scoreCount;
 
         reload.hidden = false
         check.disabled = true 
+
       }
     }
   }
@@ -61,5 +73,3 @@ check.addEventListener("click", function () {
 reload.addEventListener('click', () => { 
     location.reload();
 });
-
-

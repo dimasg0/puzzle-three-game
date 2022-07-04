@@ -9,6 +9,7 @@ body {
   justify-content: center;
 
   height: 500px;
+  background-color: aliceblue;
 }
 
 /*Головна сторынка*/
@@ -19,7 +20,7 @@ body {
 }
 
 .info {
-  margin: 10px 25px 50px 25px;
+  margin: 10px 25px 20px 25px;
   font-size: 16px;
   font-weight: 500;
 }
@@ -54,7 +55,7 @@ body {
   border-radius: 30px;
   width: 92%;
   margin-bottom: 0px;
-  margin: 150px 25px 0 25px;
+  margin: 100px 25px 0 25px;
 }
 
 /*Cторінка гри*/
