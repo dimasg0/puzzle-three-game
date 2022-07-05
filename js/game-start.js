@@ -14,6 +14,14 @@ let check = document.getElementById("chech");
 
 let back = document.getElementById("back");
 
+//форма результата
+let form = document.getElementById("myForm");
+let btnRestart = document.getElementById("btn-restart")
+let mainMenu = document.getElementById("menu")
+let h3score = document.getElementById("h3score")
+
+form.hidden = true;
+
 //получаем сложность игры
 let chooseLevel = sessionStorage.getItem("testName");
 
@@ -91,6 +99,7 @@ check.addEventListener("click", function () {
       error.hidden = true;
       check.disabled = false;
     }, 2000);
+
   } else {
     if (counter == 0) {
       scoreCount = 0;
@@ -101,16 +110,14 @@ check.addEventListener("click", function () {
       check.disabled = false;
 
       if (counter == 0) {
-        error.hidden = false;
-        error.innerHTML = "Гра завершена, ваш рахунок: " + scoreCount;
+        form.hidden = false;
+        h3score.innerHTML = "Ваш рахунок: " + scoreCount;
 
         if (myResult > scoreCount) {
           localStorage.setItem("myResust", myResult);
         } else {
           localStorage.setItem("myResust", scoreCount);
         }
-
-        reload.hidden = false;
         check.disabled = true;
       }
     }
@@ -121,10 +128,17 @@ reload.addEventListener("click", () => {
   location.reload();
 });
 
+btnRestart.addEventListener("click", () => {
+  location.reload();
+});
+
 back.addEventListener("click", () => {
   location.href = "/html/index.html";
 });
 
+mainMenu.addEventListener("click", () => {
+  location.href = "/html/index.html";
+});
 
 deleteBestResult = () => {
    localStorage.clear();
