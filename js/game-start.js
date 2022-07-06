@@ -16,9 +16,9 @@ let back = document.getElementById("back");
 
 //форма результата
 let form = document.getElementById("myForm");
-let btnRestart = document.getElementById("btn-restart")
-let mainMenu = document.getElementById("menu")
-let h3score = document.getElementById("h3score")
+let btnRestart = document.getElementById("btn-restart");
+let mainMenu = document.getElementById("menu");
+let h3score = document.getElementById("h3score");
 
 form.hidden = true;
 
@@ -65,6 +65,29 @@ if (chooseLevel === "simple") {
   counter = 1;
 
   obj = JSON.parse(puzzleHurd);
+} else if (chooseLevel === "all") {
+  level.innerHTML = "Рівень: Комплексний";
+  counter = 6;
+
+  obj = JSON.parse(puzzleSimple);
+
+  let simple = obj.puzzle;
+
+  obj = JSON.parse(puzzleMidle);
+
+  let middle = obj.puzzle;
+
+  obj = JSON.parse(puzzleHurd);
+
+  let hard = obj.puzzle;
+
+  let array = simple.concat(middle).concat(hard);
+
+  shuffle(array)
+  
+  obj = { 
+    puzzle: array
+}
 }
 
 count.innerHTML = "Залишилося спроб: " + counter;
@@ -99,7 +122,6 @@ check.addEventListener("click", function () {
       error.hidden = true;
       check.disabled = false;
     }, 2000);
-
   } else {
     if (counter == 0) {
       scoreCount = 0;
@@ -141,5 +163,22 @@ mainMenu.addEventListener("click", () => {
 });
 
 deleteBestResult = () => {
-   localStorage.clear();
+  localStorage.clear();
+};
+
+function shuffle(array) {
+  let currentIndex = array.length,
+    temporaryValue,
+    randomIndex;
+
+  while (0 !== currentIndex) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
 }
