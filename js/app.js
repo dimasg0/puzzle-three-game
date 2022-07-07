@@ -6,6 +6,6 @@ start_btn.addEventListener("click", () => {
 
     sessionStorage.setItem('testName', options[levelChange].value); 
 
-    document.location.href = "/html/game.html"
+    document.location.href = "/html/splash.html"
 })
 

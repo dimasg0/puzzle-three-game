@@ -13,6 +13,7 @@ let qs = document.getElementById("qs");
 let check = document.getElementById("chech");
 
 let back = document.getElementById("back");
+let deleteBestResult = document.getElementById("update")
 
 //форма результата
 let form = document.getElementById("myForm");
@@ -162,9 +163,12 @@ mainMenu.addEventListener("click", () => {
   location.href = "/html/index.html";
 });
 
-deleteBestResult = () => {
+deleteBestResult.addEventListener("click", () => {
   localStorage.clear();
-};
+  localStorage.setItem("myResust", 0);
+
+  alert("Результат оновлено");
+})
 
 function shuffle(array) {
   let currentIndex = array.length,

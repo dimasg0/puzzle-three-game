@@ -23,11 +23,11 @@
                 <div class="result">
                     <button id="chech" class="check">Перевірити</button>
 
-                    <p id="count">Залишилося спроб: </p>
-                    <p id="score">Рахунок: 0</p>
+                    <p id="count" style="font-size: 24px; font-weight: 700;">Залишилося спроб: </p>
+                    <p id="score" style="font-size: 24px; font-weight: 700;">Рахунок: 0</p>
                 </div>
 
-                <h3 id="error"></h3>
+                <h3 id="error" style="text-align: center; margin-top: 60px"></h3>
 
                 <button id="reload">Перезапустити гру</button>
             </div>
@@ -45,10 +45,13 @@
 
     <h2 id="myresult" style="margin-top: 10px;">Останній найкращий результат: </h2>
 
-    <button id="back" style="margin: 50px 25px 0 0;">Повернутись</button>
+    <div class="menu-game">
+        <button class="back" id="back" style="margin: 50px 25px 0 0;">Повернутись</button>
+        <button class="back" id="update" style="margin: 50px 25px 0 0;"><img src="/img/refresh.png" width="16px" alt="Оновити"></button>    
+    </div>
 
     </html>
-    <script src="/js/game-start.js"> </script>
+    <script src="/js/game-start.js"></script>
 
 </body>
 

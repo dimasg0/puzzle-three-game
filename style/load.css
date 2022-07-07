@@ -1,0 +1,14 @@
+.splash {
+    display: flex;
+    justify-content: center;
+
+}
+.splash img{
+    margin-top: 45vh;
+}
+
+
+
+body {
+    min-height: 100vh;
+}
